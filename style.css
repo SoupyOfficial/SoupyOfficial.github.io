@@ -7,47 +7,49 @@
 
 /* CSS Variables for theming */
 :root {
-    /* Light theme colors - Royal Blue Primary & Gold Accent */
-    --bg-primary: #f8f9fa;
+    /* Light theme colors - Enhanced Royal Blue Primary & Gold Accent */
+    --bg-primary: #f8fafc;
     --bg-secondary: #ffffff;
     --bg-accent: rgba(255, 255, 255, 0.95);
-    --text-primary: #1e2a5a;
-    --text-secondary: #555555;
-    --text-muted: #1e3a8a;
-    --border-color: rgba(30, 58, 138, 0.1);
-    --shadow-color: rgba(30, 58, 138, 0.1);
-    --gradient-primary: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-    --gradient-hero: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-    --gradient-highlight: linear-gradient(45deg, #f59e0b 0%, #d97706 100%);
-    --accent-gold: #f59e0b;
-    --accent-gold-light: #fbbf24;
-    --accent-gold-dark: #d97706;
-    --royal-blue: #1e3a8a;
-    --royal-blue-light: #3b82f6;
-    --royal-blue-dark: #1e2a5a;
-    --card-hover-shadow: 0 20px 40px rgba(30, 58, 138, 0.15);
+    --text-primary: #1a237e;
+    --text-secondary: #475569;
+    --text-muted: #3949ab;
+    --border-color: rgba(57, 73, 171, 0.1);
+    --shadow-color: rgba(26, 35, 126, 0.12);
+    --gradient-primary: linear-gradient(135deg, #1a237e 0%, #3949ab 50%, #5c6bc0 100%);
+    --gradient-hero: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+    --gradient-highlight: linear-gradient(45deg, #ff9800 0%, #e65100 100%);
+    --accent-gold: #ff9800;
+    --accent-gold-light: #ffc947;
+    --accent-gold-dark: #e65100;
+    --royal-blue: #1a237e;
+    --royal-blue-light: #3949ab;
+    --royal-blue-dark: #0d1b5e;
+    --royal-blue-accent: #5c6bc0;
+    --card-hover-shadow: 0 20px 40px rgba(26, 35, 126, 0.18);
 }
 
 [data-theme="dark"] {
-    /* Dark theme colors - Royal Blue Primary & Gold Accent */
-    --bg-primary: #0f1419;
-    --bg-secondary: #1e2a5a;
-    --bg-accent: rgba(30, 42, 90, 0.95);
-    --text-primary: #ffffff;
-    --text-secondary: #e0e0e0;
-    --text-muted: #fbbf24;
-    --border-color: rgba(251, 191, 36, 0.1);
-    --shadow-color: rgba(0, 0, 0, 0.3);
-    --gradient-primary: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-    --gradient-hero: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-    --gradient-highlight: linear-gradient(45deg, #f59e0b 0%, #d97706 100%);
-    --accent-gold: #fbbf24;
-    --accent-gold-light: #fcd34d;
-    --accent-gold-dark: #f59e0b;
-    --royal-blue: #3b82f6;
-    --royal-blue-light: #60a5fa;
-    --royal-blue-dark: #1e3a8a;
-    --card-hover-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    /* Dark theme colors - Enhanced Royal Blue Primary & Gold Accent */
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-accent: rgba(30, 41, 59, 0.95);
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #ffc947;
+    --border-color: rgba(255, 201, 71, 0.15);
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --gradient-primary: linear-gradient(135deg, #1a237e 0%, #3949ab 50%, #5c6bc0 100%);
+    --gradient-hero: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+    --gradient-highlight: linear-gradient(45deg, #ffc947 0%, #ff9800 100%);
+    --accent-gold: #ffc947;
+    --accent-gold-light: #ffe082;
+    --accent-gold-dark: #ff9800;
+    --royal-blue: #5c6bc0;
+    --royal-blue-light: #7986cb;
+    --royal-blue-dark: #3949ab;
+    --royal-blue-accent: #9c27b0;
+    --card-hover-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
 html {
@@ -112,7 +114,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(30, 58, 138, 0.3);
+    box-shadow: 0 15px 35px rgba(26, 35, 126, 0.4);
+    background: linear-gradient(135deg, #0d1b5e 0%, #1a237e 50%, #3949ab 100%);
 }
 
 .btn-secondary {
