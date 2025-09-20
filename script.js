@@ -7,6 +7,7 @@ const body = document.body;
 const currentTheme = localStorage.getItem('theme') || 'dark';
 body.setAttribute('data-theme', currentTheme);
 updateThemeIcon(currentTheme);
+updateNavbarBackground(currentTheme);
 
 // Theme toggle event listener
 themeToggle.addEventListener('click', () => {
@@ -16,6 +17,7 @@ themeToggle.addEventListener('click', () => {
     body.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
     updateThemeIcon(newTheme);
+    updateNavbarBackground(newTheme);
 });
 
 function updateThemeIcon(theme) {
@@ -25,6 +27,25 @@ function updateThemeIcon(theme) {
     } else {
         themeIcon.classList.remove('fa-sun');
         themeIcon.classList.add('fa-moon');
+    }
+}
+
+function updateNavbarBackground(theme) {
+    const navbar = document.querySelector('.navbar');
+    if (!navbar) return;
+    
+    const isScrolled = window.scrollY > 50;
+    
+    if (theme === 'dark') {
+        navbar.style.background = isScrolled ? 'rgba(30, 42, 90, 0.98)' : 'rgba(30, 42, 90, 0.95)';
+    } else {
+        navbar.style.background = isScrolled ? 'rgba(255, 255, 255, 0.98)' : 'rgba(255, 255, 255, 0.95)';
+    }
+    
+    if (isScrolled) {
+        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+    } else {
+        navbar.style.boxShadow = 'none';
     }
 }
 
@@ -47,24 +68,8 @@ document.querySelectorAll('.nav-link').forEach(link => {
 
 // Navbar background on scroll
 window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
     const currentTheme = body.getAttribute('data-theme');
-    
-    if (window.scrollY > 50) {
-        if (currentTheme === 'dark') {
-            navbar.style.background = 'rgba(30, 42, 90, 0.98)';
-        } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        }
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-    } else {
-        if (currentTheme === 'dark') {
-            navbar.style.background = 'rgba(30, 42, 90, 0.95)';
-        } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        }
-        navbar.style.boxShadow = 'none';
-    }
+    updateNavbarBackground(currentTheme);
 });
 
 // Smooth scrolling for navigation links
