@@ -16,6 +16,7 @@ themeToggle.addEventListener('click', () => {
     body.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
     updateThemeIcon(newTheme);
+    updateNavbarColors(); // Update navbar colors immediately after theme change
 });
 
 function updateThemeIcon(theme) {
@@ -45,8 +46,8 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
-// Navbar background on scroll
-window.addEventListener('scroll', function() {
+// Function to update navbar colors based on current theme and scroll position
+function updateNavbarColors() {
     const navbar = document.querySelector('.navbar');
     const currentTheme = body.getAttribute('data-theme');
     
@@ -65,7 +66,10 @@ window.addEventListener('scroll', function() {
         }
         navbar.style.boxShadow = 'none';
     }
-});
+}
+
+// Navbar background on scroll
+window.addEventListener('scroll', updateNavbarColors);
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
