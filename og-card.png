@@ -1,0 +1,11 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#162032" />
+      <stop offset="100%" stop-color="#0b0d10" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <text x="600" y="300" font-family="Arial" font-size="48" font-weight="bold" fill="#e6eef8" text-anchor="middle">Jacob Campbell</text>
+  <text x="600" y="350" font-family="Arial" font-size="24" fill="#9aa4b2" text-anchor="middle">Software Engineer • Java & Python</text>
+</svg>

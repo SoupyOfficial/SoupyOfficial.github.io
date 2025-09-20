@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <!-- TODO: Replace with your name and customize the title -->
+  <title>Jacob Campbell — Software Engineer</title>
+  <meta name="description" content="Software Engineer. Java & Python backends. Systems, ML, and thoughtful tooling." />
+
+  <!-- Open Graph / Twitter - TODO: Update URLs and content -->
+  <meta property="og:title" content="Jacob Campbell — Software Engineer" />
+  <meta property="og:description" content="Java & Python backends. Systems, ML, and thoughtful tooling." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://SoupyOfficial.github.io/" />
+  <meta property="og:image" content="https://SoupyOfficial.github.io/og-card.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon and app icons -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- Minimal, readable CSS -->
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --card: #11141a;
+      --muted: #9aa4b2;
+      --text: #e6eef8;
+      --accent: #5ac8fa; /* calm blue */
+      --link: #7bd88f;   /* green */
+      --ring: rgba(90,200,250,.35);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --max: 980px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text); background: radial-gradient(1200px 800px at 80% -20%, #162032 0%, transparent 60%), var(--bg);
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 28px 20px 80px; }
+
+    header {
+      display: grid; grid-template-columns: 96px 1fr; gap: 18px; align-items: center;
+      margin: 12px 0 28px;
+    }
+    .avatar { width: 96px; height: 96px; border-radius: 18px; object-fit: cover; box-shadow: var(--shadow); border: 1px solid #1e2633; }
+    .title h1 { margin: 0 0 6px; font-size: 28px; letter-spacing: .2px; }
+    .title p { margin: 0; color: var(--muted); }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid #1b2330; border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 18px 18px; margin: 14px 0; backdrop-filter: blur(4px);
+    }
+
+    .grid { display: grid; gap: 14px; }
+    @media (min-width: 860px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+
+    h2 { margin: 6px 0 10px; font-size: 18px; color: #d7e3f4; letter-spacing: .3px; }
+    .muted { color: var(--muted); }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 12px;
+      background: #101722; color: var(--text); border: 1px solid #1b2330; text-decoration: none; cursor: pointer;
+      box-shadow: var(--shadow);
+    }
+    .btn:hover { border-color: #2a394f; }
+    .btn:focus-visible { outline: 3px solid var(--ring); outline-offset: 3px; }
+
+    .stack { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { padding: 6px 10px; border-radius: 999px; background: #0e1622; border: 1px solid #1c2534; color: #d0d8e4; font-size: 13px; }
+
+    .project { display: grid; gap: 10px; }
+    .project h3 { margin: 0; font-size: 17px; }
+    .project .meta { font-size: 13px; color: var(--muted); }
+
+    footer { margin-top: 28px; color: var(--muted); font-size: 14px; text-align: center; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+
+    .hero {
+      padding: 16px; border: 1px dashed #273246; border-radius: var(--radius);
+      background: #0e1520;
+    }
+  </style>
+
+  <!-- JSON-LD Person schema for richer previews - TODO: Update with your information -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jacob Campbell",
+    "jobTitle": "Software Engineer",
+    "url": "https://SoupyOfficial.github.io/",
+    "sameAs": [
+      "https://github.com/SoupyOfficial",
+      "https://www.linkedin.com/in/YOUR-LINKEDIN"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <!-- TODO: Replace avatar.jpg with your profile photo -->
+    <header>
+      <img class="avatar" src="avatar.jpg" alt="Portrait" />
+      <div class="title">
+        <!-- TODO: Replace with your name and title -->
+        <h1>Jacob Campbell</h1>
+        <p>Software Engineer · Java 21 · Python 3.12 · Systems & ML tooling</p>
+        <!-- TODO: Update skills chips with your technologies -->
+        <div class="stack" style="margin-top:10px">
+          <span class="chip">Java/Grails</span>
+          <span class="chip">Spring</span>
+          <span class="chip">Python</span>
+          <span class="chip">Flutter</span>
+          <span class="chip">GitLab CI</span>
+          <span class="chip">Postgres</span>
+          <span class="chip">Docker</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero with primary calls-to-action - TODO: Update all links -->
+    <section class="card hero">
+      <h2>Contact</h2>
+      <p class="muted">Fast ways to reach me. The NFC on my physical card points here.</p>
+      <div class="stack">
+        <a class="btn" href="#vcf" id="vcfBtn" download="Jacob-Campbell.vcf">⬇️ Save Contact</a>
+        <a class="btn" href="mailto:hello@yourdomain.dev">✉️ Email</a>
+        <a class="btn" href="https://github.com/SoupyOfficial" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="resume.pdf" target="_blank" rel="noopener">📄 Resume</a>
+        <a class="btn" href="https://calendly.com/YOUR-HANDLE/intro" target="_blank" rel="noopener">🗓️ Book 15m</a>
+      </div>
+    </section>
+
+    <section class="grid grid-2">
+      <article class="card">
+        <h2>About</h2>
+        <!-- TODO: Replace with your personal description -->
+        <p>I design and ship backend services and ML‑adjacent tooling. I optimize for clarity, observability, and boring reliability. Recent focus: on‑device inference and data pipelines for fault prediction.</p>
+      </article>
+
+      <article class="card">
+        <h2>Skills</h2>
+        <p class="muted">Representative set. Not exhaustive.</p>
+        <!-- TODO: Update with your actual skills -->
+        <div class="stack">
+          <span class="chip">Java 21</span>
+          <span class="chip">Python 3.12</span>
+          <span class="chip">Grails/Spring</span>
+          <span class="chip">Flask/FastAPI</span>
+          <span class="chip">Flutter</span>
+          <span class="chip">Docker</span>
+          <span class="chip">GitLab CI/CD</span>
+          <span class="chip">Postgres/Redis</span>
+          <span class="chip">Kafka/RabbitMQ</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- TODO: Replace with your actual projects and GitHub links -->
+    <section class="card">
+      <h2>Projects</h2>
+      <div class="grid">
+        <div class="project">
+          <h3><a href="https://github.com/SoupyOfficial/ashtrail" target="_blank" rel="noopener">AshTrail</a></h3>
+          <div class="meta">Flutter · Local‑first sync · Firebase/Isar</div>
+          <p>Rebuild of Smoke Log. Local‑first data with background sync and analytics. Custom refresh‑token service on Cloud Functions.</p>
+        </div>
+        <div class="project">
+          <h3><a href="https://github.com/SoupyOfficial/lstgpt" target="_blank" rel="noopener">LSTGPT</a></h3>
+          <div class="meta">Java/Python · RAG · GitLab CI</div>
+          <p>Internal ChatGPT‑style assistant with role isolation, Ollama backends, and pipeline‑driven content indexing.</p>
+        </div>
+        <div class="project">
+          <h3><a href="https://github.com/SoupyOfficial/locomotive-faults" target="_blank" rel="noopener">Locomotive Fault Prediction</a></h3>
+          <div class="meta">Python · SHAP · Timeseries</div>
+          <p>Sensor anomaly triage. One‑vs‑rest classifiers, SHAP summaries, and cluster diagnostics for actionable thresholds.</p>
+        </div>
+        <div class="project">
+          <h3><a href="https://github.com/SoupyOfficial/project-four" target="_blank" rel="noopener">Project Four</a></h3>
+          <div class="meta">Tech Stack · Framework</div>
+          <p>Description of your fourth project. Replace this with actual project details.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid grid-2">
+      <article class="card">
+        <h2>Writing</h2>
+        <!-- TODO: Replace with your actual blog posts or articles -->
+        <ul>
+          <li><a href="#">Designing boring services that scale</a></li>
+          <li><a href="#">A pragmatic intro to on‑device LLMs</a></li>
+          <li><a href="#">Debugging CI as a product, not a pipeline</a></li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>Contact again</h2>
+        <p class="muted">Prefer email. Calendly also works.</p>
+        <!-- TODO: Replace with your email -->
+        <p><a href="mailto:hello@yourdomain.dev">hello@yourdomain.dev</a></p>
+      </article>
+    </section>
+
+    <footer>
+      <!-- TODO: Replace with your name and username -->
+      <p>© <span id="year"></span> Jacob Campbell • <span class="mono">SoupyOfficial.github.io</span></p>
+    </footer>
+  </div>
+
+  <!-- Inlined vCard via data URI so the whole site stays single-file friendly -->
+  <script>
+    // Update year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Build a vCard on the fly, then attach to the Save Contact button as a data URI
+    // TODO: Replace all contact information with your actual details
+    const vcard = [
+      'BEGIN:VCARD',
+      'VERSION:3.0',
+      'N:Campbell;Jacob;;;',
+      'FN:Jacob Campbell',
+      'TITLE:Software Engineer',
+      'EMAIL;type=INTERNET;type=WORK;pref=1:hello@yourdomain.dev',
+      'TEL;type=CELL;type=VOICE;pref=1:+1-555-555-5555',
+      'URL:https://SoupyOfficial.github.io/',
+      'X-SOCIALPROFILE;type=github:https://github.com/SoupyOfficial',
+      'X-SOCIALPROFILE;type=linkedin:https://www.linkedin.com/in/YOUR-LINKEDIN',
+      'ADR;TYPE=WORK:;;Lake Mary;FL;32746;USA',
+      'END:VCARD' 
+    ].join('\n');
+
+    const dataUri = 'data:text/vcard;charset=utf-8,' + encodeURIComponent(vcard);
+    const vcfBtn = document.getElementById('vcfBtn');
+    vcfBtn.setAttribute('href', dataUri);
+  </script>
+</body>
+</html>

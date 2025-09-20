@@ -1,0 +1,21 @@
+{
+  "name": "Jacob Campbell Portfolio",
+  "short_name": "JC Portfolio",
+  "description": "Personal portfolio of Jacob Campbell, Software Engineer",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0d10",
+  "theme_color": "#4a90e2",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
