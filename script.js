@@ -1,3 +1,33 @@
+// Dark Mode Toggle
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+const body = document.body;
+
+// Check for saved theme preference or default to light mode
+const currentTheme = localStorage.getItem('theme') || 'light';
+body.setAttribute('data-theme', currentTheme);
+updateThemeIcon(currentTheme);
+
+// Theme toggle event listener
+themeToggle.addEventListener('click', () => {
+    const currentTheme = body.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme);
+});
+
+function updateThemeIcon(theme) {
+    if (theme === 'dark') {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+    } else {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+    }
+}
+
 // Mobile Navigation Toggle
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
@@ -18,11 +48,21 @@ document.querySelectorAll('.nav-link').forEach(link => {
 // Navbar background on scroll
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
+    const currentTheme = body.getAttribute('data-theme');
+    
     if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+        if (currentTheme === 'dark') {
+            navbar.style.background = 'rgba(45, 45, 45, 0.98)';
+        } else {
+            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+        }
         navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
     } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        if (currentTheme === 'dark') {
+            navbar.style.background = 'rgba(45, 45, 45, 0.95)';
+        } else {
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        }
         navbar.style.boxShadow = 'none';
     }
 });

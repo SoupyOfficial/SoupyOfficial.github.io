@@ -5,6 +5,7 @@ A clean, modern, and responsive personal portfolio website showcasing Jacob Camp
 ## 🌟 Features
 
 - **Responsive Design**: Looks great on desktop, tablet, and mobile devices
+- **Dark Mode Support**: Toggle between light and dark themes with smooth transitions
 - **Modern UI/UX**: Clean design with smooth animations and hover effects
 - **Three Main Sections**:
   - About/Contact with downloadable vCard (JacobCampbell.vcf)
@@ -78,7 +79,7 @@ This portfolio showcases Jacob Campbell's work and expertise:
 3. **Anomaly Detector**: Machine learning demo for time series data analysis
 
 ### Contact & Links
-- **Email**: placeholder@email.com (update with actual email)
+- **Email**: jscampbell21@outlook.com (update with actual email)
 - **GitHub**: https://github.com/SoupyOfficial
 - **LinkedIn**: [Add LinkedIn profile URL]
 - **vCard**: JacobCampbell.vcf available for download
@@ -138,7 +139,7 @@ If you want to use this as a template for your own portfolio:
 
 To complete the portfolio setup:
 
-1. **Update Email**: Replace `placeholder@email.com` with actual email address
+1. **Update Email**: Replace `jscampbell21@outlook.com` with actual email address
 2. **Add LinkedIn**: Update LinkedIn profile URL in social links
 3. **Replace Resume**: Add actual resume.pdf file  
 4. **Update Project Links**: Add actual GitHub repository links for projects
@@ -146,7 +147,7 @@ To complete the portfolio setup:
 
 ## 📧 Contact
 
-- **Email**: placeholder@email.com
+- **Email**: jscampbell21@outlook.com
 - **GitHub**: https://github.com/SoupyOfficial
 - **Portfolio**: https://soupyofficial.github.io
 
@@ -197,7 +198,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 To complete the portfolio setup:
 
-1. **Update Email**: Replace `placeholder@email.com` with actual email address
+1. **Update Email**: Replace `jscampbell21@outlook.com` with actual email address
 2. **Add LinkedIn**: Update LinkedIn profile URL in social links
 3. **Replace Resume**: Add actual resume.pdf file  
 4. **Update Project Links**: Add actual GitHub repository links for projects
@@ -205,7 +206,7 @@ To complete the portfolio setup:
 
 ## 📧 Contact
 
-- **Email**: placeholder@email.com
+- **Email**: jscampbell21@outlook.com
 - **GitHub**: https://github.com/SoupyOfficial
 - **Portfolio**: https://soupyofficial.github.io
 
