@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:John Doe
+N:Doe;John;;;
+TITLE:Software Engineer
+ORG:Tech Solutions Inc.
+EMAIL;TYPE=INTERNET:john.doe@email.com
+TEL;TYPE=CELL:+1234567890
+ADR;TYPE=HOME:;;123 Tech Street;San Francisco;CA;94105;USA
+URL:https://johndoe.github.io
+NOTE:Passionate software engineer specializing in full-stack development with JavaScript, Python, and React. Available for new opportunities and exciting projects.
+END:VCARD
