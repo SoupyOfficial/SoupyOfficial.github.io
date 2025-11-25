@@ -76,6 +76,19 @@
     box-shadow: var(--focus-ring);
 }
 
+/* Screen reader only class for accessibility announcements */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -366,7 +379,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-tech-stack span {
-    color: #7dd3fc;
+    color: var(--accent-cyan-light);
     font-weight: 500;
 }
 
@@ -1238,11 +1251,12 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .social-link {
-        min-height: 56px;
+        min-height: 48px; /* Slightly above WCAG minimum for better usability */
     }
     
     .contact-method {
         padding: 1.25rem;
+        min-height: 48px;
     }
 }
 
