@@ -103,8 +103,8 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements for scroll animations
 document.addEventListener('DOMContentLoaded', function() {
-    // Add animation classes to elements
-    const animateElements = document.querySelectorAll('.project-card, .contact-method, .social-link, .strength-card');
+    // Add animation classes to elements (excluding fade-in elements which are handled separately)
+    const animateElements = document.querySelectorAll('.project-card:not(.fade-in), .contact-method, .social-link');
     
     animateElements.forEach(el => {
         el.style.opacity = '0';
@@ -113,9 +113,10 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
     
-    // Handle fade-in elements
+    // Handle fade-in elements (strength cards, project cards with fade-in class)
     const fadeInElements = document.querySelectorAll('.fade-in');
-    fadeInElements.forEach(el => {
+    fadeInElements.forEach((el, index) => {
+        el.style.transitionDelay = `${0.1 * (index % 4 + 1)}s`;
         observer.observe(el);
     });
 });
