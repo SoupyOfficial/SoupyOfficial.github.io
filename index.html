@@ -9,34 +9,39 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Skip to main content link for keyboard navigation -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="#home">Jacob Campbell</a>
+                <a href="#home" aria-label="Jacob Campbell - Home">Jacob Campbell</a>
             </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#strengths" class="nav-link">Strengths</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#resume" class="nav-link">Resume</a>
-                <a href="#contact" class="nav-link">Contact</a>
+            <div class="nav-menu" id="nav-menu" role="menubar">
+                <a href="#about" class="nav-link" role="menuitem">About</a>
+                <a href="#strengths" class="nav-link" role="menuitem">Strengths</a>
+                <a href="#projects" class="nav-link" role="menuitem">Projects</a>
+                <a href="#resume" class="nav-link" role="menuitem">Resume</a>
+                <a href="#contact" class="nav-link" role="menuitem">Contact</a>
             </div>
             <div class="nav-controls">
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                    <i class="fas fa-sun" id="theme-icon"></i>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="true">
+                    <i class="fas fa-sun" id="theme-icon" aria-hidden="true"></i>
                 </button>
-                <div class="hamburger" id="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
+                <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <!-- Main content wrapper -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <header id="home" class="hero" role="banner">
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-title"><span class="highlight">Jacob Campbell</span></h1>
@@ -55,76 +60,76 @@
                 </div>
             </div>
         </div>
-    </section>
+    </header>
 
     <!-- Core Strengths Section -->
-    <section id="strengths" class="core-strengths">
+    <section id="strengths" class="core-strengths" aria-labelledby="strengths-title">
         <div class="container">
-            <h2 class="section-title">Core Strengths</h2>
-            <div class="strengths-grid">
-                <div class="strength-card fade-in">
-                    <div class="strength-icon">
+            <h2 class="section-title" id="strengths-title">Core Strengths</h2>
+            <div class="strengths-grid" role="list">
+                <article class="strength-card fade-in" role="listitem">
+                    <div class="strength-icon" aria-hidden="true">
                         <i class="fas fa-layer-group"></i>
                     </div>
                     <h3>Backend Architecture</h3>
-                    <ul class="strength-points">
+                    <ul class="strength-points" aria-label="Backend Architecture skills">
                         <li>System design and high-difficulty feature work</li>
                         <li>Cross-service architectural ownership</li>
                         <li>Production-ready automation design</li>
                     </ul>
-                </div>
-                <div class="strength-card fade-in">
-                    <div class="strength-icon">
+                </article>
+                <article class="strength-card fade-in" role="listitem">
+                    <div class="strength-icon" aria-hidden="true">
                         <i class="fas fa-robot"></i>
                     </div>
                     <h3>AI Workflow Automation</h3>
-                    <ul class="strength-points">
+                    <ul class="strength-points" aria-label="AI Workflow Automation skills">
                         <li>Multi-tool agent pipelines</li>
                         <li>Internal LLM integration</li>
                         <li>Automated reasoning systems</li>
                     </ul>
-                </div>
-                <div class="strength-card fade-in">
-                    <div class="strength-icon">
+                </article>
+                <article class="strength-card fade-in" role="listitem">
+                    <div class="strength-icon" aria-hidden="true">
                         <i class="fas fa-database"></i>
                     </div>
                     <h3>Data &amp; Reliability</h3>
-                    <ul class="strength-points">
+                    <ul class="strength-points" aria-label="Data and Reliability skills">
                         <li>Data ingestion &amp; telematics normalization</li>
                         <li>Reliability tooling development</li>
                         <li>Schema consistency &amp; validation</li>
                     </ul>
-                </div>
-                <div class="strength-card fade-in">
-                    <div class="strength-icon">
+                </article>
+                <article class="strength-card fade-in" role="listitem">
+                    <div class="strength-icon" aria-hidden="true">
                         <i class="fas fa-code-branch"></i>
                     </div>
                     <h3>DevOps Engineering</h3>
-                    <ul class="strength-points">
+                    <ul class="strength-points" aria-label="DevOps Engineering skills">
                         <li>CI/CD pipeline optimization</li>
                         <li>Observability &amp; automation</li>
                         <li>Multi-service deployment flows</li>
                     </ul>
-                </div>
-                <div class="strength-card fade-in">
-                    <div class="strength-icon">
+                </article>
+                <article class="strength-card fade-in" role="listitem">
+                    <div class="strength-icon" aria-hidden="true">
                         <i class="fas fa-users-cog"></i>
                     </div>
                     <h3>Team Leadership</h3>
-                    <ul class="strength-points">
+                    <ul class="strength-points" aria-label="Team Leadership skills">
                         <li>De-facto backend lead role</li>
                         <li>Cross-team communication</li>
                         <li>Mentoring &amp; architecture decisions</li>
                     </ul>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about" aria-labelledby="about-title">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title" id="about-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
                     <p>
@@ -140,46 +145,46 @@
                     </p>
                     
                     <div class="skills">
-                        <h3>Technical Skills</h3>
-                        <div class="skill-categories">
-                            <div class="skill-category">
+                        <h3 id="skills-heading">Technical Skills</h3>
+                        <div class="skill-categories" role="list" aria-labelledby="skills-heading">
+                            <div class="skill-category" role="listitem">
                                 <h4>Languages</h4>
-                                <div class="skill-tags">
-                                    <span class="skill-tag">Java 21</span>
-                                    <span class="skill-tag">Python 3.12/3.13</span>
-                                    <span class="skill-tag">TypeScript</span>
+                                <div class="skill-tags" role="list" aria-label="Programming languages">
+                                    <span class="skill-tag" role="listitem">Java 21</span>
+                                    <span class="skill-tag" role="listitem">Python 3.12/3.13</span>
+                                    <span class="skill-tag" role="listitem">TypeScript</span>
                                 </div>
                             </div>
-                            <div class="skill-category">
+                            <div class="skill-category" role="listitem">
                                 <h4>Frameworks</h4>
-                                <div class="skill-tags">
-                                    <span class="skill-tag">Spring Boot</span>
-                                    <span class="skill-tag">Grails</span>
-                                    <span class="skill-tag">Flask</span>
+                                <div class="skill-tags" role="list" aria-label="Frameworks">
+                                    <span class="skill-tag" role="listitem">Spring Boot</span>
+                                    <span class="skill-tag" role="listitem">Grails</span>
+                                    <span class="skill-tag" role="listitem">Flask</span>
                                 </div>
                             </div>
-                            <div class="skill-category">
+                            <div class="skill-category" role="listitem">
                                 <h4>DevOps</h4>
-                                <div class="skill-tags">
-                                    <span class="skill-tag">GitLab CI/CD</span>
-                                    <span class="skill-tag">Docker</span>
-                                    <span class="skill-tag">Tomcat</span>
+                                <div class="skill-tags" role="list" aria-label="DevOps tools">
+                                    <span class="skill-tag" role="listitem">GitLab CI/CD</span>
+                                    <span class="skill-tag" role="listitem">Docker</span>
+                                    <span class="skill-tag" role="listitem">Tomcat</span>
                                 </div>
                             </div>
-                            <div class="skill-category">
+                            <div class="skill-category" role="listitem">
                                 <h4>AI/ML</h4>
-                                <div class="skill-tags">
-                                    <span class="skill-tag">LLM Agents</span>
-                                    <span class="skill-tag">Tool-based Reasoning</span>
-                                    <span class="skill-tag">Data Processing</span>
+                                <div class="skill-tags" role="list" aria-label="AI and ML skills">
+                                    <span class="skill-tag" role="listitem">LLM Agents</span>
+                                    <span class="skill-tag" role="listitem">Tool-based Reasoning</span>
+                                    <span class="skill-tag" role="listitem">Data Processing</span>
                                 </div>
                             </div>
-                            <div class="skill-category">
+                            <div class="skill-category" role="listitem">
                                 <h4>Other</h4>
-                                <div class="skill-tags">
-                                    <span class="skill-tag">ANTLR4 DSLs</span>
-                                    <span class="skill-tag">Observability</span>
-                                    <span class="skill-tag">Schema Design</span>
+                                <div class="skill-tags" role="list" aria-label="Other skills">
+                                    <span class="skill-tag" role="listitem">ANTLR4 DSLs</span>
+                                    <span class="skill-tag" role="listitem">Observability</span>
+                                    <span class="skill-tag" role="listitem">Schema Design</span>
                                 </div>
                             </div>
                         </div>
@@ -190,12 +195,12 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <section id="projects" class="projects" aria-labelledby="projects-title">
         <div class="container">
-            <h2 class="section-title">Key Projects &amp; Impact</h2>
-            <div class="projects-grid">
+            <h2 class="section-title" id="projects-title">Key Projects &amp; Impact</h2>
+            <div class="projects-grid" role="list">
                 <!-- Project 1: Internal AI Automation -->
-                <div class="project-card fade-in">
+                <article class="project-card fade-in" role="listitem">
                     <div class="project-content">
                         <h3 class="project-title">Internal AI Automation &amp; Engineering Productivity</h3>
                         <p class="project-description">
@@ -214,17 +219,17 @@
                                 <li>Standardized AI-assisted development practices across the team</li>
                             </ul>
                         </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">LLM Agents</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">GitLab API</span>
-                            <span class="tech-tag">Automation</span>
+                        <div class="project-tech" role="list" aria-label="Technologies used">
+                            <span class="tech-tag" role="listitem">LLM Agents</span>
+                            <span class="tech-tag" role="listitem">Python</span>
+                            <span class="tech-tag" role="listitem">GitLab API</span>
+                            <span class="tech-tag" role="listitem">Automation</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- Project 2: Backend Platform Ownership -->
-                <div class="project-card fade-in">
+                <article class="project-card fade-in" role="listitem">
                     <div class="project-content">
                         <h3 class="project-title">Backend Platform Ownership</h3>
                         <p class="project-description">
@@ -243,17 +248,17 @@
                                 <li>Mentored newer backend engineers and absorbed complex tasks others avoided</li>
                             </ul>
                         </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">Java 21</span>
-                            <span class="tech-tag">Spring Boot</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Observability</span>
+                        <div class="project-tech" role="list" aria-label="Technologies used">
+                            <span class="tech-tag" role="listitem">Java 21</span>
+                            <span class="tech-tag" role="listitem">Spring Boot</span>
+                            <span class="tech-tag" role="listitem">Python</span>
+                            <span class="tech-tag" role="listitem">Observability</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- Project 3: Telematics Data Ingestion -->
-                <div class="project-card fade-in">
+                <article class="project-card fade-in" role="listitem">
                     <div class="project-content">
                         <h3 class="project-title">Telematics Data Ingestion &amp; Reliability Tooling</h3>
                         <p class="project-description">
@@ -271,16 +276,16 @@
                                 <li>Built reusable tools for analyzing thousands of sensor datapoints</li>
                             </ul>
                         </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Data Processing</span>
-                            <span class="tech-tag">Schema Design</span>
+                        <div class="project-tech" role="list" aria-label="Technologies used">
+                            <span class="tech-tag" role="listitem">Python</span>
+                            <span class="tech-tag" role="listitem">Data Processing</span>
+                            <span class="tech-tag" role="listitem">Schema Design</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- Project 4: Custom Diagnostic Rule Engine -->
-                <div class="project-card fade-in">
+                <article class="project-card fade-in" role="listitem">
                     <div class="project-content">
                         <h3 class="project-title">Custom Diagnostic Rule Engine (ANTLR4)</h3>
                         <p class="project-description">
@@ -298,17 +303,17 @@
                                 <li>Reduced engineering bottlenecks for alert logic creation</li>
                             </ul>
                         </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">Java 21</span>
-                            <span class="tech-tag">ANTLR4</span>
-                            <span class="tech-tag">DSL</span>
-                            <span class="tech-tag">Spring Boot</span>
+                        <div class="project-tech" role="list" aria-label="Technologies used">
+                            <span class="tech-tag" role="listitem">Java 21</span>
+                            <span class="tech-tag" role="listitem">ANTLR4</span>
+                            <span class="tech-tag" role="listitem">DSL</span>
+                            <span class="tech-tag" role="listitem">Spring Boot</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- Project 5: Cross-Team Leadership -->
-                <div class="project-card fade-in">
+                <article class="project-card fade-in" role="listitem">
                     <div class="project-content">
                         <h3 class="project-title">Cross-Team Leadership &amp; Above-Role Responsibilities</h3>
                         <p class="project-description">
@@ -326,16 +331,16 @@
                                 <li>Supported cross-team communication and solution design</li>
                             </ul>
                         </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">Leadership</span>
-                            <span class="tech-tag">Architecture</span>
-                            <span class="tech-tag">Planning</span>
+                        <div class="project-tech" role="list" aria-label="Skills used">
+                            <span class="tech-tag" role="listitem">Leadership</span>
+                            <span class="tech-tag" role="listitem">Architecture</span>
+                            <span class="tech-tag" role="listitem">Planning</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- Project 6: CI/CD & Ops Improvements -->
-                <div class="project-card fade-in">
+                <article class="project-card fade-in" role="listitem">
                     <div class="project-content">
                         <h3 class="project-title">CI/CD, Automation, and Ops Improvements</h3>
                         <p class="project-description">
@@ -353,41 +358,41 @@
                                 <li>Modernized Tomcat/Grails setups and internal tooling</li>
                             </ul>
                         </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">GitLab CI/CD</span>
-                            <span class="tech-tag">Docker</span>
-                            <span class="tech-tag">Tomcat</span>
-                            <span class="tech-tag">Automation</span>
+                        <div class="project-tech" role="list" aria-label="Technologies used">
+                            <span class="tech-tag" role="listitem">GitLab CI/CD</span>
+                            <span class="tech-tag" role="listitem">Docker</span>
+                            <span class="tech-tag" role="listitem">Tomcat</span>
+                            <span class="tech-tag" role="listitem">Automation</span>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- Resume Section -->
-    <section id="resume" class="resume">
+    <section id="resume" class="resume" aria-labelledby="resume-title">
         <div class="container">
-            <h2 class="section-title">Resume & Links</h2>
+            <h2 class="section-title" id="resume-title">Resume &amp; Links</h2>
             <div class="resume-content">
                 <div class="resume-download">
-                    <div class="resume-icon">
+                    <div class="resume-icon" aria-hidden="true">
                         <i class="fas fa-file-pdf"></i>
                     </div>
                     <div class="resume-text">
                         <h3>Download Resume</h3>
                         <p>Get a detailed overview of my experience, skills, and education</p>
-                        <a href="resume.pdf" download class="btn btn-primary">
-                            <i class="fas fa-download"></i> Download PDF
+                        <a href="resume.pdf" download class="btn btn-primary" aria-label="Download Jacob Campbell's resume as PDF">
+                            <i class="fas fa-download" aria-hidden="true"></i> Download PDF
                         </a>
                     </div>
                 </div>
                 
                 <div class="social-links">
-                    <h3>Connect With Me</h3>
-                    <div class="social-grid">
-                        <a href="https://github.com/SoupyOfficial" target="_blank" class="social-link">
-                            <div class="social-icon">
+                    <h3 id="connect-heading">Connect With Me</h3>
+                    <nav class="social-grid" aria-labelledby="connect-heading">
+                        <a href="https://github.com/SoupyOfficial" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Visit Jacob Campbell's GitHub profile (opens in new tab)">
+                            <div class="social-icon" aria-hidden="true">
                                 <i class="fab fa-github"></i>
                             </div>
                             <div class="social-info">
@@ -396,8 +401,8 @@
                             </div>
                         </a>
                         
-                        <a href="https://www.linkedin.com/in/jacob-campbell-94880011b/" target="_blank" class="social-link">
-                            <div class="social-icon">
+                        <a href="https://www.linkedin.com/in/jacob-campbell-94880011b/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Visit Jacob Campbell's LinkedIn profile (opens in new tab)">
+                            <div class="social-icon" aria-hidden="true">
                                 <i class="fab fa-linkedin"></i>
                             </div>
                             <div class="social-info">
@@ -406,8 +411,8 @@
                             </div>
                         </a>
                         
-                        <a href="mailto:jscampbell21@outlook.com" class="social-link">
-                            <div class="social-icon">
+                        <a href="mailto:jscampbell21@outlook.com" class="social-link" aria-label="Send email to Jacob Campbell">
+                            <div class="social-icon" aria-hidden="true">
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div class="social-info">
@@ -415,16 +420,16 @@
                                 <p>jscampbell21@outlook.com</p>
                             </div>
                         </a>
-                    </div>
+                    </nav>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact" aria-labelledby="contact-title">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <h2 class="section-title" id="contact-title">Get In Touch</h2>
             <div class="contact-content">
                 <div class="contact-info">
                     <h3>Let's Work Together</h3>
@@ -434,19 +439,19 @@
                         I'd love to hear from you.
                     </p>
                     
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <div class="contact-icon">
+                    <div class="contact-methods" role="list">
+                        <div class="contact-method" role="listitem">
+                            <div class="contact-icon" aria-hidden="true">
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div class="contact-details">
                                 <h4>Email</h4>
-                                <a href="mailto:jscampbell21@outlook.com">jscampbell21@outlook.com</a>
+                                <a href="mailto:jscampbell21@outlook.com" aria-label="Send email to jscampbell21@outlook.com">jscampbell21@outlook.com</a>
                             </div>
                         </div>
                         
-                        <div class="contact-method">
-                            <div class="contact-icon">
+                        <div class="contact-method" role="listitem">
+                            <div class="contact-icon" aria-hidden="true">
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div class="contact-details">
@@ -457,24 +462,25 @@
                     </div>
                     
                     <div class="vcard-download">
-                        <a href="JacobCampbell.vcf" download class="btn btn-secondary">
-                            <i class="fas fa-address-card"></i> Download vCard
+                        <a href="JacobCampbell.vcf" download class="btn btn-secondary" aria-label="Download Jacob Campbell's contact information as vCard">
+                            <i class="fas fa-address-card" aria-hidden="true"></i> Download vCard
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <p>&copy; 2024 Jacob Campbell. All rights reserved.</p>
-                <div class="footer-social">
-                    <a href="https://github.com/SoupyOfficial" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/jacob-campbell-94880011b/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                </div>
+                <nav class="footer-social" aria-label="Social media links">
+                    <a href="https://github.com/SoupyOfficial" target="_blank" rel="noopener noreferrer" aria-label="Visit Jacob Campbell's GitHub profile (opens in new tab)"><i class="fab fa-github" aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com/in/jacob-campbell-94880011b/" target="_blank" rel="noopener noreferrer" aria-label="Visit Jacob Campbell's LinkedIn profile (opens in new tab)"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                </nav>
             </div>
         </div>
     </footer>
