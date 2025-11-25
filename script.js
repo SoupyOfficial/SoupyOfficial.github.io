@@ -7,6 +7,7 @@ const body = document.body;
 const currentTheme = localStorage.getItem('theme') || 'dark';
 body.setAttribute('data-theme', currentTheme);
 updateThemeIcon(currentTheme);
+updateThemeToggleAriaPressed(currentTheme);
 
 // Theme toggle event listener
 themeToggle.addEventListener('click', () => {
@@ -16,6 +17,7 @@ themeToggle.addEventListener('click', () => {
     body.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
     updateThemeIcon(newTheme);
+    updateThemeToggleAriaPressed(newTheme);
     updateNavbarColors(); // Update navbar colors immediately after theme change
 });
 
@@ -29,13 +31,19 @@ function updateThemeIcon(theme) {
     }
 }
 
+function updateThemeToggleAriaPressed(theme) {
+    themeToggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+    themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+}
+
 // Mobile Navigation Toggle
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
 
 hamburger.addEventListener('click', function() {
-    hamburger.classList.toggle('active');
+    const isActive = hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', isActive ? 'true' : 'false');
 });
 
 // Close mobile menu when clicking on a link
@@ -43,7 +51,18 @@ document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
     });
+});
+
+// Close mobile menu when pressing Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.focus();
+    }
 });
 
 // Function to update navbar colors based on current theme and scroll position
@@ -268,37 +287,47 @@ window.addEventListener('load', function() {
 
 // Accessibility enhancements
 document.addEventListener('DOMContentLoaded', function() {
-    // Skip to main content link for keyboard navigation
-    const skipLink = document.createElement('a');
-    skipLink.href = '#about';
-    skipLink.textContent = 'Skip to main content';
-    skipLink.style.cssText = `
-        position: absolute;
-        top: -40px;
-        left: 6px;
-        background: #667eea;
-        color: white;
-        padding: 8px;
-        text-decoration: none;
-        border-radius: 3px;
-        z-index: 1000;
-        transition: top 0.3s;
-    `;
-    
-    skipLink.addEventListener('focus', function() {
-        this.style.top = '6px';
-    });
-    
-    skipLink.addEventListener('blur', function() {
-        this.style.top = '-40px';
-    });
-    
-    document.body.insertBefore(skipLink, document.body.firstChild);
-    
     // Add ARIA labels to social links
     const socialLinks = document.querySelectorAll('.social-link');
     socialLinks.forEach(link => {
-        const platform = link.querySelector('h4').textContent;
-        link.setAttribute('aria-label', `Visit my ${platform} profile`);
+        const h4 = link.querySelector('h4');
+        if (h4) {
+            const platform = h4.textContent;
+            // Only set if not already set in HTML
+            if (!link.hasAttribute('aria-label')) {
+                link.setAttribute('aria-label', `Visit my ${platform} profile`);
+            }
+        }
+    });
+    
+    // Keyboard navigation for interactive cards
+    const interactiveCards = document.querySelectorAll('.strength-card, .project-card');
+    interactiveCards.forEach(card => {
+        card.setAttribute('tabindex', '0');
+        card.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                const link = card.querySelector('a');
+                if (link) {
+                    link.click();
+                }
+            }
+        });
+    });
+    
+    // Announce theme changes to screen readers
+    const announcer = document.createElement('div');
+    announcer.setAttribute('aria-live', 'polite');
+    announcer.setAttribute('aria-atomic', 'true');
+    announcer.className = 'sr-only';
+    announcer.style.cssText = 'position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;';
+    document.body.appendChild(announcer);
+    
+    // Override theme toggle to announce changes
+    const originalThemeToggle = themeToggle.onclick;
+    themeToggle.addEventListener('click', function() {
+        const theme = body.getAttribute('data-theme');
+        setTimeout(() => {
+            announcer.textContent = `Theme changed to ${theme} mode`;
+        }, 100);
     });
 });
