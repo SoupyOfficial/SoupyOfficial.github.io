@@ -103,13 +103,20 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements for scroll animations
 document.addEventListener('DOMContentLoaded', function() {
-    // Add animation classes to elements
-    const animateElements = document.querySelectorAll('.project-card, .contact-method, .social-link');
+    // Add animation classes to elements (excluding fade-in elements which are handled separately)
+    const animateElements = document.querySelectorAll('.project-card:not(.fade-in), .contact-method, .social-link');
     
     animateElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+    
+    // Handle fade-in elements (strength cards, project cards with fade-in class)
+    const fadeInElements = document.querySelectorAll('.fade-in');
+    fadeInElements.forEach((el, index) => {
+        el.style.transitionDelay = `${0.1 * (index % 4 + 1)}s`;
         observer.observe(el);
     });
 });
@@ -240,8 +247,9 @@ console.log(`
 🚀 Welcome to my portfolio!
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Built with: HTML5, CSS3, Vanilla JavaScript
+Role: Backend & AI Engineer
 Features: Responsive design, smooth scrolling, animations
-Contact: john.doe@email.com
+Contact: jscampbell21@outlook.com
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 `);
 
